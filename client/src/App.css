@@ -1,0 +1,180 @@
+* {
+  background-color: #292929;
+  color: white;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+}
+
+#root {
+  position: relative;
+  min-height: calc(100vh - 151px);
+  overflow: hidden;
+  display: block;
+  padding-bottom: 51px;
+}
+
+.site-wrapper {
+  padding-bottom: 51px;
+}
+
+.Header {
+  height: 100px;
+  text-align: center;
+}
+
+.Footer {
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #333
+}
+
+.Navbar {
+  position: absolute;
+  top: 40px;
+}
+
+.Signout {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+
+.App {
+  position: relative;
+  min-height: calc(100vh - 151px);
+  text-align: center;
+}
+
+.signup, .signin {
+  margin: auto;
+  padding: 1%;
+  max-width: 50%;
+  background-color: #292929;
+  min-height: calc(100vh - 151px);
+}
+
+.signup *, .signin * {
+  background-color: #292929;
+}
+
+.products-container {
+  width: 80%;
+  height: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.cart {
+  float: left;
+  width: 20%;
+  border: 2px solid white;
+  padding: 5px;
+  height: 79%;
+  position: fixed;
+  overflow: scroll;
+  right: 0;
+  text-align: center;
+}
+
+.product-card {
+  float: left;
+  margin: 5px;
+  margin-top: 15px;
+}
+
+.product-card img:hover {
+  position: relative;
+  z-index: 1;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.product-card h5 {
+  position: relative;
+  bottom: 1.2em;
+  opacity: 60%;
+  max-width: fit-content;
+}
+
+.product-card button {
+  position: relative;
+  bottom: 2em;
+}
+
+.lineItem-card {
+  margin-bottom: 15px;
+  padding: 5px;
+  background-color: #202020;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+}
+
+.lineItem-card * {
+  background-color: #202020;
+}
+
+.lineItem-card img {
+  max-width: 90%;
+}
+
+.signup {
+  clear: both;
+}
+
+.lineItem-card .breakpoint {
+  display: none;
+}
+
+.product-show {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.showPageWrapper {
+  position: relative;
+  max-width: fit-content;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.product-show p {
+  position: relative;
+  font-size: .9em;
+  max-width: inherit;
+}
+
+.product-show h3 {
+  text-align: right;
+}
+
+.copyright {
+  margin-left: auto;
+  font-family: serif;
+  font-style: italic;
+  font-size: .7em;
+}
+
+@media only screen and (max-width: 1095px) {
+  .lineItem-card .breakpoint {
+    display: block;
+  }
+}

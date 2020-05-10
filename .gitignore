@@ -25,3 +25,11 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore project planning materials
+../Product_Page.png
+../Products_Page.png
+../Site_Planning.xlsx
+
+# Ignore Secret Variables
+.env
