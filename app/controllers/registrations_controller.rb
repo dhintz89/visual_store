@@ -19,7 +19,7 @@ class RegistrationsController < Devise::RegistrationsController
     #     devise_parameter_sanitizer.permit(:sign_up, keys: [:admin])
     # end
 
-    def sign_up_params
-        params.require(:registration).permit(:email, :password, :password_confirmation)
-    end
+    # def sign_up_params
+    #     params.require(:registration).permit(:email, :password, :password_confirmation)
+    # end
   end

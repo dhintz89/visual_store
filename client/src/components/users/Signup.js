@@ -9,15 +9,20 @@ import Col from 'react-bootstrap/Col';
 
 export default class Signup extends Component {
     state = {
-        email: "",
-        password: "",
-        password_confirmation: "",
-        // admin: false
+        user: {
+            email: "",
+            password: "",
+            password_confirmation: "",
+            // admin: false
+        }
     }
 
     handleChange = event => {
         this.setState({
-            [event.target.name]: event.target.value
+            user: {
+                ...this.state.user,
+                [event.target.name]: event.target.value
+            }
         })
     }
 
@@ -27,7 +32,7 @@ export default class Signup extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        if(this.state.password === document.querySelector('#signupFormConfirmPassword').value) {
+        if(this.state.user.password === document.querySelector('#signupFormConfirmPassword').value) {
             this.submitUserSignup(this.state)
         } else {
             console.log("Bad Request")
