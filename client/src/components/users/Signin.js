@@ -51,18 +51,6 @@ export default class Signup extends Component {
         this.props.history.push('/products');
     }
 
-    logout = event => {
-        fetch("/users/sign_out", {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
-        })
-        .then(console.log('success'))
-    }
-
-
     render() {
         return (
             <div className="signin">
@@ -80,8 +68,6 @@ export default class Signup extends Component {
                     </Form.Row>
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>
-
-                <Button variant="danger" onClick={event => this.logout(event)}>Log Out</Button>
             </div>
         )
     }
