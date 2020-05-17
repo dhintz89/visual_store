@@ -38,6 +38,15 @@ gem 'dotenv-rails'
 # debugging
 gem 'pry'
 
+# web tokens to transfer cookie-data between client and backend
+# gem 'jwt'
+
+# provide quick serializer functionality
+# gem 'active_model_serializers'
+
+# Authorization
+# gem 'cancancan'
+
 # Allows opening server and client simultaneously
 gem 'foreman'
 
