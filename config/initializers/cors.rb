@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'http://localhost:3000'
 
     resource '*',
       headers: :any,
@@ -22,6 +22,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       #   "exp",
       #   "jti"
       # ]
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      expose: %w(Authorization)
   end
 end

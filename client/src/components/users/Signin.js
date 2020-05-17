@@ -1,49 +1,50 @@
 import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import Row from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import ProductsContainer from '../products/ProductsContainer';
-// import {Route, Redirect} from 'react-router-dom';
-// import { render } from 'react-dom';
 
 export default class Signup extends Component {
     state = {
-        email: "",
-        password: "",
-        password_confirmation: "",
-        // admin: false
+        user: {
+            email: "",
+            password: "",
+        }
     }
 
     handleChange = event => {
+        // const key = event.target.name;
+        // const val = event.target.value;
+        // this.setState(state => (state.user[key] = val, state))
+
+        // this.setState(prevState => {
+        //     ...prevState,
+        //     user: {
+        //         ...prevState.user,
+        //         [event.target.name]: event.target.value
+        //     }
+        // })
+
         this.setState({
-            [event.target.name]: event.target.value
+            user: {
+                ...this.state.user,
+                [event.target.name]: event.target.value
+            }
         })
     }
 
-    // handleCheckboxChange = event => {
-    //     this.setState(prevState => ({admin: !prevState.admin}))
-    // }
-
     handleSubmit = event => {
         event.preventDefault()
-        if(this.state.password === document.querySelector('#signupFormConfirmPassword').value) {
             this.submitUserSignup(this.state)
-        } else {
-            console.log("Bad Request")
-        }
-        document.getElementById('signupFormConfirmPassword').value=""
         this.setState({
             email: "",
-            password: "",
-            password_confirmation: "",
-            // admin: false
+            password: ""
         })
     }
 
     submitUserSignup = (userDetails) => {
         console.log(userDetails)
-        fetch("/users", {
+        fetch("/users/sign_in.json", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -62,29 +63,37 @@ export default class Signup extends Component {
         this.props.history.push('/products');
     }
 
+    logout = event => {
+        fetch("/users/sign_out", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+        .then(console.log('success'))
+    }
+
+
     render() {
         return (
-            <div className="signup">
-                <h3>New User Sign Up:</h3><br/>
-                <Form id="signup_form" onSubmit={event => this.handleSubmit(event)}>
+            <div className="signin">
+                <h3>Sign In:</h3><br/>
+                <Form id="signin_form" onSubmit={event => this.handleSubmit(event)}>
                     <Form.Row>
-                        <Form.Group controlId="signupFormEmail">
+                        <Form.Group controlId="signinFormEmail">
                             <Form.Control type="email" name="email" placeholder="Enter Email" onChange={event => this.handleChange(event)} value={this.state.email} />
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
-                        <Form.Group as={Col} controlId="signupFormPassword">
+                        <Form.Group controlId="signinFormPassword">
                             <Form.Control type="password" name="password" placeholder="Enter Password" onChange={event => this.handleChange(event)} value={this.state.password} />
                         </Form.Group>
-                        <Form.Group as={Col} controlId="signupFormConfirmPassword">
-                            <Form.Control type="password" name="password_confirmation" placeholder="Retype Password" onChange={event => this.handleChange(event)} value={this.state.password_confirmation} />
-                        </Form.Group>
                     </Form.Row>
-                    {/* <Form.Group controlId="signupFormAdmin">
-                        <Form.Check type="checkbox" label="Admin: " name="admin" onChange={event => this.handleCheckboxChange(event)} checked={this.state.admin} />
-                    </Form.Group> */}
                     <Button variant="primary" type="submit">Submit</Button>
                 </Form>
+
+                <Button variant="danger" onClick={event => this.logout(event)}>Log Out</Button>
             </div>
         )
     }

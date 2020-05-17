@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 // import Footer from './components/structure/Footer';
 // import App from './App';
 import Signup from './components/users/Signup';
-// import Signin from './components/users/Signin';
+import Signin from './components/users/Signin';
 // import ProductsContainer from './components/products/ProductsContainer';
 // import ProductShow from './components/products/ProductShow';
 import rootReducer from './reducers/rootReducer';
@@ -30,8 +30,8 @@ ReactDOM.render(
         <Router>
           {/* <Header/> */}
           <Switch>
-            {/* <Route exact path="/" render={() => signedIn() ? <Redirect to="/products"/> : <App/>} />
-            <Route exact path="/signin" component={Signin} /> */}
+            {/* <Route exact path="/" render={() => signedIn() ? <Redirect to="/products"/> : <App/>} /> */}
+            <Route exact path="/signin" component={Signin} /> 
             <Route exact path="/signup" component={Signup} />
             {/* <Route exact path="/products" component={ProductsContainer} />
             <Route path="/products/:prodId" render={routerProps => < ProductShow {...routerProps} />} /> */}

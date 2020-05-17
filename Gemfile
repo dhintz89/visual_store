@@ -33,7 +33,7 @@ gem 'devise'
 gem 'devise-jwt'
 
 # secret storage
-gem 'dotenv'
+gem 'dotenv-rails'
 
 # debugging
 gem 'pry'
