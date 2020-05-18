@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create({email: "test@email.com", password: "password", admin: false})
+
 Product.create([
     {
         title: "Remember Me~",
@@ -54,5 +56,21 @@ Product.create([
         copyright: "Copyright 2013-2020 DirkLoechel",
         publication_date: "Sat, 07 Sep 2013 16:50:14 PDT",
         category: "movies&tv"
+    }
+])
+
+Order.create({user_id: 1})
+OrderLineItem.create([
+    {
+        order_id: 1,
+        product_id: 1,
+        quantity: 2,
+        price: 1000
+    },
+    {
+        order_id: 1,
+        product_id: 2,
+        quantity: 3,
+        price: 3600
     }
 ])

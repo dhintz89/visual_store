@@ -16,7 +16,7 @@ export default function cartReducer(
     switch (action.type) {
         case 'ADD_TO_CART':
             const newLine = {
-                id: action.product.id,
+                product_id: action.product.id,
                 thumbnail: action.product.thumbnail,
                 title: action.product.title,
                 price_each: action.product.price,

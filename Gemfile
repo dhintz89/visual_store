@@ -39,10 +39,10 @@ gem 'dotenv-rails'
 gem 'pry'
 
 # web tokens to transfer cookie-data between client and backend
-# gem 'jwt'
+gem 'jwt'
 
 # provide quick serializer functionality
-# gem 'active_model_serializers'
+gem 'active_model_serializers'
 
 # Authorization
 # gem 'cancancan'
