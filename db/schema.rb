@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_200811) do
     t.integer "product_id"
     t.string "title"
     t.integer "quantity"
-    t.integer "price"
+    t.integer "price_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_order_line_items_on_order_id"

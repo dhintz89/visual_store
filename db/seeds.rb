@@ -65,12 +65,12 @@ OrderLineItem.create([
         order_id: 1,
         product_id: 1,
         quantity: 2,
-        price: 1000
+        price_total: 1000
     },
     {
         order_id: 1,
         product_id: 2,
         quantity: 3,
-        price: 3600
+        price_total: 3600
     }
 ])

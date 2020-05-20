@@ -5,7 +5,7 @@ class CreateOrderLineItems < ActiveRecord::Migration[5.2]
       t.references :product, foreign_key: true
       t.string :title
       t.integer :quantity
-      t.integer :price
+      t.integer :price_total
 
       t.timestamps
     end

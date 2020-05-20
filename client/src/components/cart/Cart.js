@@ -20,15 +20,14 @@ class Cart extends Component {
 
     submitForCheckout = event => {
         event.preventDefault();
-        // submit to Order Processing API
-        console.log(this.props.orderLineItems)
+        // future implementation: submit to Order Processing API rather than direct to backend
         fetch("/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(this.props.orderLineItems) // need to get this formatted so that strong params can accept ( ex. {order: [{...}, {...}]} )
+            body: JSON.stringify({order_line_items_attributes: this.props.orderLineItems})
         })
         .then(resp => resp.json)
         .then(lineItems => console.log(lineItems))

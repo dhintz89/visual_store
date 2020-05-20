@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_line_items
 
   def total_price
-    self.order_line_items.map{|item| item.price.to_i}.reduce(:+)
+    self.order_line_items.map{|item| item.price_total.to_i}.reduce(:+)
   end
 
   def item_count

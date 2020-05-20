@@ -5,11 +5,9 @@ class OrdersController < ApplicationController
     end
 
     def create
-        @order = Order.create(user_id: current_user.id)
-        order_attributes.each do |line|
-            binding.pry
-            @order.order_line_items.create(line)
-        end
+        @order = Order.new(order_params)
+        @order.user = current_user
+        @order.save
     end
 
     def show
@@ -19,7 +17,7 @@ class OrdersController < ApplicationController
 
     private
 
-    def order_attributes
-        params[:_json].permit(:one, :two=>[[:product_id, :price_total, :quantity, :title]]) # one and two are demonstrative only - remove them
+    def order_params
+        params.require(:order).permit(:order_line_items_attributes=>[:product_id, :price_total, :quantity, :title])
     end
 end
