@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 class ProductsContainer extends Component {
 
     handleCartAdd = product => {
-        if (this.props.orderLineItems.findIndex(line => line.id === product.id) !== -1) {
+        if (this.props.orderLineItems.findIndex(line => line.product_id === product.id) !== -1) {
         window.alert(`To product you from making accidental duplicate purchases, you can only add a product to the cart once. \r \r If you would like additional copies, increase Quantity in your Shopping Cart.`)
         } else {
             return this.props.addToCart(product)
