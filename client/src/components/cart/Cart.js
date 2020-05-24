@@ -49,7 +49,7 @@ class Cart extends Component {
                 <br/><br/>
                 {this.props.orderLineItems.map(lineItem => <CartCard 
                     lineItem={lineItem} 
-                    key={lineItem.id} 
+                    key={lineItem.product_id} 
                     handleCartRemove={this.handleCartRemove} 
                     handleQtyIncrease={this.handleQtyIncrease} 
                     handleQtyDecrease={this.handleQtyDecrease} 

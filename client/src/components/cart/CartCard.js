@@ -16,12 +16,12 @@ const handleClick = (event, prod) => {
 
 const CartCard = props => {
     return (
-        <div className="lineItem-card" id={props.lineItem.id} onClick={event => handleClick(event, props.lineItem)}>
+        <div className="lineItem-card" id={props.lineItem.product_id} onClick={event => handleClick(event, props.lineItem)}>
             <Image src={props.lineItem.thumbnail} alt={props.lineItem.title} thumbnail />
             <p>{props.lineItem.title}</p>
-            <p>Quantity: <br className="breakpoint" />{<button onClick={event => props.handleQtyIncrease(props.lineItem.id)} >+</button>} {props.lineItem.quantity} {<button onClick={event => props.handleQtyDecrease(props.lineItem.id)}>-</button>}<br/>
+            <p>Quantity: <br className="breakpoint" />{<button onClick={event => props.handleQtyIncrease(props.lineItem.product_id)} >+</button>} {props.lineItem.quantity} {<button onClick={event => props.handleQtyDecrease(props.lineItem.product_id)}>-</button>}<br/>
             Total Price: {props.lineItem.price_total}</p>
-            <RemoveFromCartButton class={`remove_${props.lineItem.id}_from_cart`} handleCartRemove={props.handleCartRemove} lineItem={props.lineItem} />
+            <RemoveFromCartButton handleCartRemove={props.handleCartRemove} lineItem={props.lineItem} />
         </div>
     )
 }

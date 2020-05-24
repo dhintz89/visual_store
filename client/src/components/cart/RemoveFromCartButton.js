@@ -7,8 +7,8 @@ const RemoveFromCartButton = props => {
             variant="danger" 
             size="sm"
             className="remove_from_cart_btn"
-            onClick={() => props.handleCartRemove(props.lineItem.id)}
-        >Remove From Cart
+            onClick={() => props.handleCartRemove(props.lineItem.product_id)}
+        ><span>Remove From Cart</span>
         </Button>
     )
 }

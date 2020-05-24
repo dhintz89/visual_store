@@ -72,18 +72,6 @@ html, body {
   background-color: white;
 }
 
-.cart {
-  float: left;
-  width: 20%;
-  border: 2px solid white;
-  padding: 5px;
-  height: 79%;
-  position: fixed;
-  overflow: scroll;
-  right: 0;
-  text-align: center;
-}
-
 .product-card {
   float: left;
   margin: 5px;
@@ -115,6 +103,18 @@ html, body {
 .product-card button {
   position: relative;
   bottom: 2em;
+}
+
+.cart {
+  float: left;
+  width: 20%;
+  border: 2px solid white;
+  padding: 5px;
+  height: 79%;
+  position: fixed;
+  overflow: scroll;
+  right: 0;
+  text-align: center;
 }
 
 .lineItem-card {
@@ -176,5 +176,52 @@ html, body {
 @media only screen and (max-width: 1095px) {
   .lineItem-card .breakpoint {
     display: block;
+  }
+
+  .cart h3 {
+    font-size: 150%;
+  }
+
+  .remove_from_cart_btn span {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .cart h3 {
+    font-size: 120%
+  }
+  .cart h5 {
+    font-size: 100%;
+  }
+
+  .lineItem-card {
+    font-size: 75%;
+  }
+
+  .remove_from_cart_btn span {
+    font-size: 61%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cart {
+    width: 150px;
+  }
+
+  .cart h3 {
+    font-size: 100%;
+  }
+
+  .cart h5 {
+    font-size: 80%;
+  }
+  
+  .lineItem-card {
+    font-size: 70%;
+  }
+
+  .remove_from_cart_btn span {
+    font-size: 55%;
   }
 }
