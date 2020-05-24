@@ -11,7 +11,7 @@ html, body {
 
 #root {
   position: relative;
-  min-height: calc(100vh - 151px);
+  min-height: 100vh;
   overflow: hidden;
   display: block;
   padding-bottom: 51px;
@@ -67,9 +67,8 @@ html, body {
 
 .products-container {
   width: 80%;
-  height: 100%;
+  min-height: 100%;
   position: relative;
-  background-color: white;
 }
 
 .product-card {
