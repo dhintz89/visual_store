@@ -1,6 +1,6 @@
 export function fetchProducts() {
     return (dispatch) => {
-        dispatch({type: 'START_ADDING_PRODUCTS_REQUEST'})
+        dispatch({type: 'START_LOADING_PRODUCTS'})
         fetch("/products")
         .then(resp => resp.json())
         .then(products => dispatch({type: 'ADD_PRODUCTS', products}));

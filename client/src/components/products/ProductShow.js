@@ -6,7 +6,7 @@ import AddToCartButton from '../cart/AddToCartButton';
 class ProductShow extends Component {
   
     render() {
-        const product = this.props.products[this.props.match.params.prodId]
+        const product = this.props.products.find(pr => pr.id === parseInt(this.props.match.params.prodId))
         return (
             <div className="product-show" id={product.id}>
                 <h1>"<u>{product.title}</u>"</h1><br/>
@@ -17,7 +17,7 @@ class ProductShow extends Component {
                     <p>{product.description}</p>
                     <p className="copyright"><i>Published: {product.publicationDate}<br/>Copyright: {product.copyright}</i></p>
                     <br/>
-                    <p>Category: {product.categoryId}</p>
+                    <p>Category: {product.category}</p>
                 </div>
             </div>
         )
@@ -26,7 +26,7 @@ class ProductShow extends Component {
 
 const mapStateToProps = state => {
     return {
-        products: state.products
+        products: state.products.products
     }
 }
 
