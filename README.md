@@ -21,37 +21,37 @@ ruby 2.6.1<br>
 Built using a Ruby on Rails API (Rails 5.2.4.2)
 
 ### Ruby dependencies
-active_model_serializers<br>
-bootsnap (>= 1.1.0)<br>
-byebug<br>
-devise<br>
-devise-jwt<br>
-dotenv-rails<br>
-foreman<br>
-jwt<br>
-listen (>= 3.0.5, < 3.2)<br>
-pry<br>
-puma (~> 3.11)<br>
-rack-cors<br>
-rails (~> 5.2.4, >= 5.2.4.2)<br>
-spring<br>
-spring-watcher-listen (~> 2.0.0)<br>
-sqlite3<br>
-tzinfo-data
+    active_model_serializers<br>
+    bootsnap (>= 1.1.0)<br>
+    byebug<br>
+    devise<br>
+    devise-jwt<br>
+    dotenv-rails<br>
+    foreman<br>
+    jwt<br>
+    listen (>= 3.0.5, < 3.2)<br>
+    pry<br>
+    puma (~> 3.11)<br>
+    rack-cors<br>
+    rails (~> 5.2.4, >= 5.2.4.2)<br>
+    spring<br>
+    spring-watcher-listen (~> 2.0.0)<br>
+    sqlite3<br>
+    tzinfo-data<br>
 
 ### JavaScript dependencies
-"@testing-library/jest-dom": "^4.2.4"
-"@testing-library/react": "^9.5.0"
-"@testing-library/user-event": "^7.2.1"
-"bootstrap": "^4.4.1"
-"react": "^16.13.1"
-"react-bootstrap": "^1.0.1"
-"react-dom": "^16.13.1"
-"react-redux": "^7.2.0"
-"react-router-dom": "^5.1.2"
-"react-scripts": "3.4.1"
-"redux": "^4.0.5"
-"redux-thunk": "^2.3.0"
+    "@testing-library/jest-dom": "^4.2.4"
+    "@testing-library/react": "^9.5.0"
+    "@testing-library/user-event": "^7.2.1"
+    "bootstrap": "^4.4.1"
+    "react": "^16.13.1"
+    "react-bootstrap": "^1.0.1"
+    "react-dom": "^16.13.1"
+    "react-redux": "^7.2.0"
+    "react-router-dom": "^5.1.2"
+    "react-scripts": "3.4.1"
+    "redux": "^4.0.5"
+    "redux-thunk": "^2.3.0"
 
 ## Initialization
 ### Configuration
