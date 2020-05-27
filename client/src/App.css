@@ -172,6 +172,10 @@ html, body {
   font-size: .7em;
 }
 
+.remove_from_cart_btn * {
+  background-color: #dc3545;
+}
+
 @media only screen and (max-width: 1095px) {
   .lineItem-card .breakpoint {
     display: block;
