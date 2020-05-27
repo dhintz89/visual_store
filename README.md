@@ -17,27 +17,27 @@ This is a full-stack online marketplace application, specializing in visual prod
 
 ## Dependencies
 ### Ruby version
-ruby 2.6.1
+ruby 2.6.1<br>
 Built using a Ruby on Rails API (Rails 5.2.4.2)
 
 ### Ruby dependencies
-  active_model_serializers
-  bootsnap (>= 1.1.0)
-  byebug
-  devise
-  devise-jwt
-  dotenv-rails
-  foreman
-  jwt
-  listen (>= 3.0.5, < 3.2)
-  pry
-  puma (~> 3.11)
-  rack-cors
-  rails (~> 5.2.4, >= 5.2.4.2)
-  spring
-  spring-watcher-listen (~> 2.0.0)
-  sqlite3
-  tzinfo-data
+  "active_model_serializers"
+  "bootsnap (>= 1.1.0)"
+  "byebug"
+  "devise"
+  "devise-jwt"
+  "dotenv-rails"
+  "foreman"
+  "jwt"
+  "listen (>= 3.0.5, < 3.2)"
+  "pry"
+  "puma (~> 3.11)"
+  "rack-cors"
+  "rails (~> 5.2.4, >= 5.2.4.2)"
+  "spring"
+  "spring-watcher-listen (~> 2.0.0)"
+  "sqlite3"
+  "tzinfo-data"
 
 ### JavaScript dependencies
     "@testing-library/jest-dom": "^4.2.4"
