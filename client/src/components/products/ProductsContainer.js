@@ -4,8 +4,6 @@ import ProductCard from './ProductCard';
 import Cart from '../cart/Cart'
 import {addToCart} from '../../actions/cart';
 import {fetchProducts} from '../../actions/fetchProducts';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 
 class ProductsContainer extends Component {
 
