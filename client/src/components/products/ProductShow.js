@@ -11,7 +11,7 @@ class ProductShow extends Component {
             <div className="product-show" id={product.id}>
                 <h1>"<u>{product.title}</u>"</h1><br/>
                 <div className="showPageWrapper">
-                    <img src={product.image} /><br/>
+                    <div className="showPageImg"><img src={product.image} /></div><br/>
                     <h3>${product.price}&nbsp;&nbsp;<AddToCartButton /></h3>
                     {/* <AddToCartButton class={`add_${props.product.id}_to_cart`} handleCartAdd={props.handleCartAdd} product={props.product} /> */}
                     <p>{product.description}</p>
