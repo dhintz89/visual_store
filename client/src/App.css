@@ -179,6 +179,7 @@ html, body {
 
 .showPageWrapper {
   position: relative;
+  max-width: fit-content;
   margin: auto;
   padding-bottom: 50px;
 }
