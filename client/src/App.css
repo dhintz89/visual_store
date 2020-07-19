@@ -163,6 +163,10 @@ html, body {
   max-width: 90%;
 }
 
+.product-show .cartItemDescription {
+  font-size: 1em;
+}
+
 .signup {
   clear: both;
 }
@@ -175,6 +179,7 @@ html, body {
   position: relative;
   margin: auto;
   text-align: center;
+  padding-right: 20%;
 }
 
 .showPageWrapper {
@@ -195,7 +200,7 @@ html, body {
   max-width: inherit;
 }
 
-.product-show h3 {
+.price {
   text-align: right;
 }
 
@@ -264,5 +269,16 @@ html, body {
 
   .remove_from_cart_btn span {
     font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .products-container {
+    padding-right: 150px;
+    width: 100%;
+  }
+    
+  .product-show {
+    padding-right: 150px;
   }
 }
