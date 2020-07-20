@@ -1,12 +1,13 @@
 import React from 'react';
 import Navbar from './Navbar';
+import {NavLink} from 'react-router-dom';
 import Signout from './Signout';
 
 const Header = () => {
     return (
         <div className="Header">
             <Navbar />
-            <h1>Visual Shop</h1>
+            <h1 id="siteTitle"><NavLink to={'/'}><span>V</span><span>i</span><span>s</span><span>u</span><span>a</span><span>l</span> <span>Shop</span></NavLink></h1>
             <Signout />
         </div>
     ) 

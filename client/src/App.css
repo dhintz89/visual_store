@@ -26,6 +26,55 @@ html, body {
   text-align: center;
 }
 
+#siteTitle {
+  font-size: 4em;
+}
+
+#siteTitle a:hover {
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(1) {
+  font-family: cursive, serif;
+  color: red;
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(2) {
+  font-family: cursive, serif;
+  color: orange;
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(3) {
+  font-family: cursive, serif;
+  color: yellow;
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(4) {
+  font-family: cursive, serif;
+  color: lightgreen;
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(5) {
+  font-family: cursive, serif;
+  color: blue;
+  text-decoration: none;
+}
+
+#siteTitle span:nth-of-type(6) {
+  font-family: cursive, serif;
+  color: violet;
+  text-decoration: none;
+}
+
+#siteTitle span:last-of-type {
+  color: coral;
+  text-decoration: underline;
+}
+
 .Footer {
   height: 50px;
   position: absolute;
