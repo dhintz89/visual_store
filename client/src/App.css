@@ -1,6 +1,14 @@
+/* set variables for dark-mode option */
+:root {
+  --bg-color: #292929;
+  --font-color: #fff;
+  --cart-card-bg-color: #202020;
+  --footer-border-color: #333;
+}
+
 * {
-  background-color: #292929;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--font-color);
   box-sizing: border-box;
 }
 
@@ -82,7 +90,7 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  border-top: 1px solid #333
+  border-top: 1px solid var(--footer-border-color)
 }
 
 .Navbar {
@@ -106,12 +114,12 @@ html, body {
   margin: auto;
   padding: 1%;
   max-width: 50%;
-  background-color: #292929;
+  background-color: var(--bg-color);
   min-height: calc(100vh - 151px);
 }
 
 .signup *, .signin * {
-  background-color: #292929;
+  background-color: var(--bg-color);
 }
 
 .products-container {
@@ -126,6 +134,7 @@ html, body {
 
 #loading-text {
   font-family: cursive, serif;
+  grid-column: 1 / span 3;
 }
 
 .product-card {
@@ -184,7 +193,7 @@ html, body {
 .cart {
   float: left;
   width: 20%;
-  border: 2px solid white;
+  border: 2px solid var(--font-color);
   padding: 5px;
   height: 79%;
   position: fixed;
@@ -197,15 +206,15 @@ html, body {
 .lineItem-card {
   margin-bottom: 15px;
   padding: 5px;
-  background-color: #202020;
+  background-color: var(--cart-card-bg-color);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid white;
+  border: 1px solid var(--font-color);
 }
 
 .lineItem-card * {
-  background-color: #202020;
+  background-color: var(--cart-card-bg-color);
 }
 
 .lineItem-card img {
