@@ -2,8 +2,6 @@ import React from 'react';
 
 const toggleTheme = () => {
     let darkMode = document.querySelector(".themeSwitch input").checked;
-    // debugger;
-    // console.log(darkMode);
     if (darkMode) {
         document.documentElement.style.setProperty("--bg-color", "#292929");
         document.documentElement.style.setProperty("--font-color", "#fff");

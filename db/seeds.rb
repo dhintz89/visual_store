@@ -149,6 +149,7 @@ Product.create([
         publication_date: "Fri, 07 Mar 2014 10:46:42 PST",
         category: "digitalart/paintings/landscapes"
     },
+    
 ])
 
 Order.create({user_id: 1})
