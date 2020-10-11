@@ -71,3 +71,9 @@ This app uses foreman to allow front-end and back-end initialization with a sing
 run "rake start"<br>
 web-server will open on Port 3000<br>
 api will open on Port 3001
+
+### Contributions
+<iframe
+  src="https://github.com/capndave/gardenbuilder-backend/blob/master/CONTRIBUTING.md"
+  style="width:90%; height:300px;"
+></iframe>
