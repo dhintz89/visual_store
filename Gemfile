@@ -13,8 +13,6 @@ gem 'puma', '~> 3.11'
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -28,18 +26,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
-# devise
+# Authentication
 gem 'devise'
-gem 'devise-jwt'
+
+# web tokens to transfer cookie-data between client and backend
+gem 'jwt'
 
 # secret storage
 gem 'dotenv-rails'
 
 # debugging
 gem 'pry'
-
-# web tokens to transfer cookie-data between client and backend
-gem 'jwt'
 
 # provide quick serializer functionality
 gem 'active_model_serializers'
@@ -53,6 +50,8 @@ gem 'foreman'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use ActiveModel has_secure_password (needed for testing only, otherwise comes as part of Devise)
+  gem 'bcrypt', '~> 3.1.7'
 end
 
 group :development do
