@@ -1,59 +1,34 @@
 class ApplicationController < ActionController::API
   respond_to :json
-    # before_action :configure_permitted_parameters, if: :devise_controller?
-    # def render_resource(resource)
-    #   if resource.errors.empty?
-    #     render json: resource
-    #   else
-    #     validation_error(resource)
-    #   end
-    # end
-  
-    # def validation_error(resource)
-    #   render json: {
-    #     errors: [
-    #       {
-    #         status: '400',
-    #         title: 'Bad Request',
-    #         detail: resource.errors,
-    #         code: '100'
-    #       }
-    #     ]
-    #   }, status: :bad_request
-    # end
+  before_action :authenticate_user
 
-    private
+  private
 
-    def current_user
-      User.find(1)
+  # Check for auth headers - if present, decode or send unauthorized response (called always to allow current_user)
+  def authenticate_user
+    if request.headers['Authorization'].present?
+      begin
+        jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1].remove('"'), Rails.application.secrets.secret_key_base).first
+        @current_user_id = jwt_payload['id']
+      rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
+        head :unauthorized
+      end
     end
+  end
 
+  # If user has not signed in, return unauthorized response (called only when auth is needed)
+  def authenticate_user!(options = {})
+    head :unauthorized unless signed_in?
+  end
 
+  # set Devise's current_user using decoded JWT instead of session
+  def current_user
+    @current_user ||= super || User.find(@current_user_id)
+  end
 
-      # protected
-  # def authenticate_request!
-  #   unless user_id_in_token?
-  #     render json: { errors: ['Not Authenticated'] }, status: :unauthorized
-  #     return
-  #   end
-  #   @current_user = User.find(auth_token[:user_id])
-  # rescue JWT::VerificationError, JWT::DecodeError
-  #   render json: { errors: ['Not Authenticated'] }, status: :unauthorized
-  # end
-
-  # private
-  # def http_token
-  #     @http_token ||= if request.headers['Authorization'].present?
-  #       request.headers['Authorization'].split(' ').last
-  #     end
-  # end
-
-  # def auth_token
-  #   @auth_token ||= JsonWebToken.decode(http_token)
-  # end
-
-  # def user_id_in_token?
-  #   http_token && auth_token && auth_token[:user_id].to_i
-  # end
+  # check that authenticate_user has successfully returned @current_user_id (user is authenticated)
+  def signed_in?
+    @current_user_id.present?
+  end
 
   end
