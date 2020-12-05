@@ -10,5 +10,5 @@ class RegistrationsController < Devise::RegistrationsController
       render json: { errors: { 'email or password' => ['is invalid'] } }, status: :unprocessable_entity
     end
   end
-  
-  end
+
+end

@@ -31,4 +31,4 @@ class ApplicationController < ActionController::API
     @current_user_id.present?
   end
 
-  end
+end
