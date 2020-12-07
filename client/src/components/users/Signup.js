@@ -50,6 +50,7 @@ export default class Signup extends Component {
         console.log(userDetails)
         fetch("/users", {
             method: "POST",
+            credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"

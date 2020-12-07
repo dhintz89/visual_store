@@ -23,7 +23,7 @@ export default class Signup extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-            this.submitUserSignup(this.state)
+        this.submitUserSignup(this.state)
         this.setState({
             email: "",
             password: ""
@@ -34,6 +34,7 @@ export default class Signup extends Component {
         console.log(userDetails)
         fetch("/users/sign_in.json", {
             method: "POST",
+            credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"

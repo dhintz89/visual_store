@@ -23,6 +23,7 @@ class Cart extends Component {
         // future implementation: submit to Order Processing API rather than direct to backend
         fetch("/orders", {
             method: "POST",
+            credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"

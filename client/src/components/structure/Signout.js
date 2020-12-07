@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 const handleClick = () => {
     fetch("/users/sign_out", {
         method: "DELETE",
+        credentials: 'include',
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
