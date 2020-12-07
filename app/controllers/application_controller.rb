@@ -1,14 +1,17 @@
 class ApplicationController < ActionController::API
+  include ::ActionController::Cookies
   respond_to :json
   before_action :authenticate_user
-
+  
   private
 
   # Check for auth headers - if present, decode or send unauthorized response (called always to allow current_user)
   def authenticate_user
-    if request.headers['Authorization'].present?
+    if cookies.signed[:jwt].present?
       begin
-        jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1].remove('"'), Rails.application.secrets.secret_key_base).first
+        jwt = cookies.signed[:jwt]
+        # jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1].remove('"'), Rails.application.secrets.secret_key_base).first
+        jwt_payload = JWT.decode(jwt, Rails.application.secrets.secret_key_base).first
         @current_user_id = jwt_payload['id']
       rescue JWT::ExpiredSignature, JWT::VerificationError, JWT::DecodeError
         head :unauthorized
