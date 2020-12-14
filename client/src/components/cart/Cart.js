@@ -26,7 +26,8 @@ class Cart extends Component {
             credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization": `Bearer ${window.localStorage.getItem("token")}`
             },
             body: JSON.stringify({order_line_items_attributes: this.props.orderLineItems})
         })

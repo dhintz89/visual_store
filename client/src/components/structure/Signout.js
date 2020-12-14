@@ -7,12 +7,13 @@ const handleClick = () => {
         credentials: 'include',
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization": `Bearer ${window.localStorage.getItem("token")}`
         },
         // body: JSON.stringify(userDetails)
     })
     .then(resp => resp.json())
-    .then(resp => console.log('Signed Out'))
+    .then(resp => console.log(resp))
 }
 
 const Signout = () => {

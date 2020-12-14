@@ -33,6 +33,7 @@ ReactDOM.render(
           <Header/>
           <Switch>
             <Route exact path="/" render={() => signedIn() ? <Redirect to="/products"/> : <App/>} />
+            <Route exact path="/" component={App} />
             <Route exact path="/signin" component={Signin} /> 
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/products" component={ProductsContainer} />

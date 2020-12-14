@@ -6,7 +6,8 @@ export function fetchProducts() {
             credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "Authorization": `Bearer ${window.localStorage.getItem("token")}`
             }
         })
         .then(resp => resp.json())

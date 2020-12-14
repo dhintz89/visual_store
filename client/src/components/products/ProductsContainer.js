@@ -27,7 +27,7 @@ class ProductsContainer extends Component {
                     {this.props.loading
                         ? <h4 id="loading-text">Please Wait...Curating Your Display.</h4>
                         : this.props.products.map(prod => <ProductCard product={prod} key={prod.id} handleCartAdd={this.handleCartAdd} />)
-                    };
+                    }
                 </div>
                 < Cart />
                 <a href="#top" className="backToTop">

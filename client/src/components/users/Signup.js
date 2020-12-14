@@ -39,10 +39,12 @@ export default class Signup extends Component {
         }
         document.getElementById('signupFormConfirmPassword').value=""
         this.setState({
-            email: "",
-            password: "",
-            password_confirmation: "",
-            // admin: false
+            user:  {
+                email: "",
+                password: "",
+                password_confirmation: "",
+                // admin: false
+            }
         })
     }
 
@@ -50,7 +52,7 @@ export default class Signup extends Component {
         console.log(userDetails)
         fetch("/users", {
             method: "POST",
-            credentials: 'include',
+            // credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -58,14 +60,14 @@ export default class Signup extends Component {
             body: JSON.stringify(userDetails)
         })
         .then(resp => resp.json())
-        .then(resp => this.userSignIn(resp))
+        .then(userInfo => this.userSignIn(userInfo))
     }
 
     userSignIn = (signinData) => {
-        localStorage.setItem("token", signinData.auth_token)
+        localStorage.setItem("token", signinData.user.auth_token)
         console.log(signinData.user);
         // redirect to products page
-        this.props.history.push('/products');
+        // this.props.history.push('/products');
     }
 
     render() {
