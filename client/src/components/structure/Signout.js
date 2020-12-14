@@ -13,9 +13,13 @@ const handleClick = () => {
         // body: JSON.stringify(userDetails)
     })
     .then(resp => resp.json())
-    .then(resp => console.log(resp))
+    .then(resp => {
+        localStorage.clear();
+        console.log(resp)
+    })
 }
 
+// Not rendering without manual page refresh
 const Signout = () => {
     if (signedIn()) {
         return <Button className="Signout" variant="danger" type="submit" onClick={() => handleClick()}>Sign Out</Button>;

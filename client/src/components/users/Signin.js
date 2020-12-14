@@ -25,8 +25,10 @@ export default class Signup extends Component {
         event.preventDefault()
         this.submitUserSignup(this.state)
         this.setState({
-            email: "",
-            password: ""
+            user: {
+                email: "",
+                password: ""
+            }
         })
     }
 
@@ -46,7 +48,7 @@ export default class Signup extends Component {
     }
 
     userSignIn = (signinData) => {
-        localStorage.setItem("token", signinData.auth_token)
+        localStorage.setItem("token", signinData.user.auth_token)
         console.log(signinData.user);
         // redirect to products page
         this.props.history.push('/products');
